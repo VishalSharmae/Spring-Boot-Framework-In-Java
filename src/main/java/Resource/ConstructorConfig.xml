@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  this is our beans -->
+    <bean class="com.spring.constructorinjest.Certificate" name="certificate">
+        <constructor-arg value="Spring Framework using JAVA"/>
+    </bean>
+
+    <bean class="com.spring.constructorinjest.Certificate" name="certificate1">
+        <constructor-arg value="Android Development using Kotlin"/>
+
+    </bean>
+
+    <bean class="com.spring.constructorinjest.Person" name="person">
+        <constructor-arg>
+            <value>Vishal</value>
+        </constructor-arg>
+        <constructor-arg value="5640" type="int"/>
+        <constructor-arg ref = "certificate"/>
+    </bean>
+    <bean class="com.spring.constructorinjest.Person" name="person1">
+        <constructor-arg value="Vikas" />
+        <constructor-arg value="5685" type="int"/>
+        <constructor-arg ref="certificate1"/>
+    </bean>
+
+<!--    using c schema for const ingest-->
+
+    <bean class="com.spring.constructorinjest.Certificate" name = "certificate2" c:name = "Python for Data Science" />
+    <bean class="com.spring.constructorinjest.Person" name = "person2" c:name = "Kartik" c:personId  ="5225" c:certificate-ref = "certificate2"/>
+
+</beans>

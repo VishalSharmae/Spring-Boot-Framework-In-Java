@@ -9,17 +9,19 @@
 
     <!--  this is our beans -->
     <bean class="com.spring.Student" name="student1">
-        <property name="studentId">
-            <value>22344</value>
-        </property>
-        <property name="studentName">
-            <value>Vishal</value>
-        </property>
-
-        <property name="studentAddress">
-            <value>
-                Chandigarh
-            </value>
-        </property>
+        <property name="studentId" value = "23354"/>
+        <property name="studentName" value = "Vishal Sharma"/>
+        <property name="studentAddress" value = "Chandigarh"/>
     </bean>
+
+    <!-- this is second bean-->
+    <bean class="com.spring.Student" name="student2">
+        <property name="studentId" value = "23357"/>
+        <property name="studentName" value = "Vikas Sharma"/>
+        <property name="studentAddress" value = "Dharmshala"/>
+    </bean>
+
+    <!-- adding value using p schema -->
+    <bean class="com.spring.Student" name = "student3" p:studentId = "25463" p:studentName = "Kartik" p:studentAddress = "Delhi"/>
+
 </beans>
