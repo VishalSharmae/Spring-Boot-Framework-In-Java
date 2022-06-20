@@ -10,7 +10,7 @@ public class Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("Refconfig.xml");
 
         A temp = (A) context.getBean("aref");
-
+//print
         System.out.println("X = " + temp.getX());
         System.out.println("Y = " + temp.getObj().getY());
 
